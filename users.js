@@ -1,11 +1,8 @@
 const express = require('express');
-const app = express();
-const usersRouter = require('./users.js');
-const postsRouter = require('./posts.js');
+const router = express.Router();
 
-.use('/users', usersRouter);
-app.('/posts', postsRouter);
-
-app.listen(4000, () => {
- console.log('listening on port 4000');
+router.get('/', (req, res) => {
+  res.send('Get list of all users.');
 });
+
+module.exports = router;
